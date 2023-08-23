@@ -50,7 +50,7 @@ def callback_query(CLIENT,CallbackQuery):
       
       "جار الدمج"
   )   
-  subprocess.call(['ffmpeg','-f','concat','-safe','0','-i','list.txt', mp3file,'-y']) 
+  cmd(f'''ffmpeg -f concat -safe 0 -i list.txt "{mp3file}" -y ''')
   with open(mp3file, 'rb') as f:
          bot.send_audio(user_id, f)
   subprocess.call(['unlink',"list.txt"]) 
