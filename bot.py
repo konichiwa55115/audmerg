@@ -36,7 +36,7 @@ def _telegram_file(client, message):
   global mp3file
   mp3file = f'''"{realname}.mp3"'''
   with open('list.txt','a') as f:
-      f.write(f'''file "{file_path}" \n''')
+      f.write(f'''file {file_path} \n''')
   message.reply(
              text = CHOOSE_UR_LANG,
              reply_markup = InlineKeyboardMarkup(CHOOSE_UR_LANG_BUTTONS)
