@@ -34,7 +34,7 @@ def _telegram_file(client, message):
   filename = os.path.basename(file_path)
   realname, ext = os.path.splitext(filename)
   global mp3file
-  mp3file = f'''"{realname}.mp3"'''
+  mp3file = f'''{realname}.mp3'''
   with open('list.txt','a') as f:
       f.write(f'''file {file_path} \n''')
   message.reply(
