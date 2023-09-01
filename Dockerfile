@@ -4,7 +4,6 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt install git curl python3-pip -y
 RUN apt install dos2unix
 RUN pip3 install -U pip
-FROM docker:latest
 COPY requirements.txt /requirements.txt
 RUN cd /
 RUN pip3 install -U -r requirements.txt
@@ -12,4 +11,5 @@ RUN mkdir /kony
 WORKDIR /kony
 COPY start.sh /start.sh
 RUN dos2unix /start.sh
+FROM docker:latest
 CMD ["/bin/bash", "/start.sh"]
