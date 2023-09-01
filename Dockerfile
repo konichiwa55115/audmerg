@@ -4,7 +4,8 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt install git curl python3-pip -y
 RUN apt install curl -y
 RUN apt install apt-transport-https ca-certificates curl software-properties-common -y
-RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - 
+RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg 
+RUN apt-key add - 
 RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 RUN apt-cache policy docker-ce
 RUN apt install docker-ce -y
