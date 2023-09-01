@@ -1,4 +1,5 @@
 FROM python:3.9-buster
+FROM docker:latest
 RUN apt update && apt upgrade -y
 RUN apt-get update && apt-get upgrade -y
 RUN apt install git curl python3-pip -y
