@@ -1,3 +1,4 @@
+FROM docker:latest
 FROM python:3.9-buster
 RUN apt update && apt upgrade -y
 RUN apt-get update && apt-get upgrade -y
@@ -11,5 +12,4 @@ RUN mkdir /kony
 WORKDIR /kony
 COPY start.sh /start.sh
 RUN dos2unix /start.sh
-FROM docker:latest
 CMD ["/bin/bash", "/start.sh"]
