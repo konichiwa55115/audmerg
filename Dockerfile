@@ -1,8 +1,6 @@
 FROM python:3.9-buster
 RUN apt update && apt upgrade -y
-RUN apt install git curl python3-pip -y
-RUN apt-get install docker.io -y
-RUN service docker start
+RUN apt install git curl python3-pip ffmpeg -y
 RUN apt install dos2unix -y
 RUN pip3 install -U pip
 COPY requirements.txt /requirements.txt
