@@ -7,7 +7,7 @@ RUN apt install apt-transport-https ca-certificates curl software-properties-com
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg 
 RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 RUN apt-cache policy docker-ce
-RUN apt install docker-ce -y
+RUN apt install docker -y
 RUN apt install dos2unix -y
 RUN pip3 install -U pip
 COPY requirements.txt /requirements.txt
