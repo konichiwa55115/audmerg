@@ -1,5 +1,6 @@
 FROM python:3.9-buster
 RUN apt update && apt upgrade -y
+RUN apt-get update && apt-get upgrade -y
 RUN apt install git curl python3-pip -y
 RUN apt install dos2unix
 RUN apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
