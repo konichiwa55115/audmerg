@@ -1,8 +1,13 @@
-FROM docker:latest
 FROM python:3.9-buster
 RUN apt update && apt upgrade -y
 RUN apt-get update && apt-get upgrade -y
 RUN apt install git curl python3-pip -y
+RUN apt install curl
+RUN apt install apt-transport-https ca-certificates curl software-properties-common
+RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+RUN apt-cache policy docker-ce
+RUN apt install docker-ce
 RUN apt install dos2unix
 RUN pip3 install -U pip
 COPY requirements.txt /requirements.txt
